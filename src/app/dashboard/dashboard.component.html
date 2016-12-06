@@ -1,0 +1,13 @@
+<div class="container">
+  <div class='jumbotron'>
+    <div class="text-center">
+      <div *ngIf="delay > 0">
+        <div>Data will be updated automatically in {{delay}} seconds</div>
+        <input type="button" (click)="manualUpdate()" class="btn btn-center btn-sm btn-primary" value="Force update">
+      </div>
+    </div>
+
+    <hr>
+    <app-messages [messages]='messages'></app-messages>
+  </div>
+</div>

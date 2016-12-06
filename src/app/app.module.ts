@@ -4,10 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageComponent } from './message/message.component';
+import { FormatContentPipe } from './format-content.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    MessagesComponent,
+    MessageComponent,
+    FormatContentPipe
   ],
   imports: [
     BrowserModule,

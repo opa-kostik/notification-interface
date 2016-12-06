@@ -1,0 +1,25 @@
+<div class='col-sm-2'>
+    <div *ngIf="isUnRead(message)">
+        <i class="fa fa-envelope-o fa-2x" (click)="toggleStatus(message)"></i>
+    </div>
+    <div *ngIf="!isUnRead(message)">
+        <i class="fa fa-envelope-open-o fa-2x" (click)="toggleStatus(message)"></i>
+    </div>    
+</div>    
+<div class='col-sm-3'>
+    from <strong>{{message.sender_id}}</strong> on <strong>{{fmtTime | date:'dd/MM/y H:m'}}</strong>
+</div> 
+<div class='col-sm-7'>
+    <div>{{fmtSubj}}
+        <i *ngIf="!show" (click)="openContent(message)" class="fa fa-arrow-circle-right"></i>
+        <i *ngIf="!!show" (click)="hideContent(message)" class="fa fa-arrow-circle-left"></i>
+    </div>
+</div>
+<br><br>
+<div *ngIf="show" class="content"> 
+    <div *ngFor='let line of fmtBody'>
+        <div class="well">{{line}}</div>
+    </div>
+</div>  
+<br>  
+
