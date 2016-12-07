@@ -10,7 +10,7 @@
 
 ##Description
 
-This app demonstarates output of JSON file stored as local assets and further async update from another file of the same structure.
+This app demonstarates output of JSON file stored as a local asset and further async update from another file of the same structure.
 Data itself represents user notifications and comes in the following format:
 
 ```json
@@ -30,7 +30,7 @@ Data itself represents user notifications and comes in the following format:
 ```
 Here is a screenshot of the app:
 
-[screen]: ./src/assets/screen.PNG "Initial screen"
+![screen](./src/assets/screen.PNG) 
 
 ##Features
 
