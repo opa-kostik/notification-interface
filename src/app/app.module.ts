@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageComponent } from './message/message.component';
-import { FormatContentPipe } from './format-content.pipe';
 
 @NgModule({
   declarations: [
@@ -15,12 +14,11 @@ import { FormatContentPipe } from './format-content.pipe';
     DashboardComponent,
     MessagesComponent,
     MessageComponent,
-    FormatContentPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    HttpModule,
+    Ng2Bs3ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

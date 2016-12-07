@@ -1,8 +1,24 @@
-<div class="message-list">
-    <div class="row">
-        <div *ngFor="let msg of messages">        
-            <app-message [message]='msg'></app-message>
-        </div>
-    </div>    
+<div *ngFor="let msg of messages" 
+    [class.hide]="doHide(msg)"
+    [class.unread]="!isRead(msg)"
+    class="list-group-item"
+    (click)="modal.open('sm')">
+    <app-message [message]='msg'></app-message>
+    
+    <modal (onClose)="setRead(msg)" #modal>
+        <modal-header>
+            <h4 class="modal-title">
+                From: <strong>{{msg.sender_id}}</strong>
+                via: <strong>{{msg.vector}}</strong>
+            </h4>
+        </modal-header>
+        <modal-body>
+            {{getMsgText(msg)}}
+    
+        </modal-body>
+        <modal-footer 
+            [show-default-buttons]="true"
+        ></modal-footer>
+    </modal>
 </div>
 

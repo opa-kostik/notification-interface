@@ -1,13 +1,42 @@
-<div class="container">
-  <div class='jumbotron'>
-    <div class="text-center">
-      <div *ngIf="delay > 0">
-        <div>Data will be updated automatically in {{delay}} seconds</div>
-        <input type="button" (click)="manualUpdate()" class="btn btn-center btn-sm btn-primary" value="Force update">
-      </div>
+<div class="container dashboard">
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <h4>Notifications</h4>
+        </div>
+        <div class="col-sm-8 col-md-9">
+            <div *ngIf="delay > 0">
+              <button type="button" (click)="manualUpdate()" 
+                      class="btn btn-default" 
+                      data-toggle="tooltip" 
+                      title="Refresh">
+                <span class="glyphicon glyphicon-refresh"></span> Update 
+              </button>
+              <span>Data will be updated automatically in {{delay}} seconds</span>
+           </div>   
+        </div>
     </div>
-
-    <hr>
-    <app-messages [messages]='messages'></app-messages>
-  </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+            <ul class="nav nav-pills nav-stacked">
+                <li [class.active]="filter === 'all'">
+                    <a href="#" (click)="showAll()">
+                        <span class="badge pull-right">{{messages.length}}</span> 
+                        All 
+                    </a>
+                </li>
+                <li [class.active]="filter === 'new'">
+                    <a href="#" (click)="showNew()">
+                        <span class="badge pull-right">{{getUnreadCnt()}}</span>
+                        New
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-8 col-md-9">
+            <div class="list-group">
+                <app-messages [filter]='filter' [messages]='messages'></app-messages>
+            </div>
+        </div>
+    </div>
 </div>

@@ -5,5 +5,7 @@ export class Message {
     invite: string;
     vector: string;
     invite_time: number;
-    status: string;    
+    status: string;
 }
+
+

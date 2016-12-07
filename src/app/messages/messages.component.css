@@ -1,0 +1,5 @@
+.list-group-item:first-child {border-top-right-radius: 0px;border-top-left-radius: 0px;}
+.list-group-item:last-child {border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;}
+.list-group-item.unread { color: #222; font-weight: bold; }
+.list-group-item.hide { display:none }
+.list-group-item:hover { background-color: #F3F3F3;}

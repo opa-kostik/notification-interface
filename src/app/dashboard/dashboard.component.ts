@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessagesService } from '../messages.service';
-import { Message} from '../message';
+import { Message } from '../message';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,10 +11,12 @@ export class DashboardComponent implements OnInit {
   public messages:Message[];
   public delay: number;
   private interval:any;
+  public filter:string;
 
   constructor(private messagesService:MessagesService ) {
     this.messages = [];
-    this.delay = 10; 
+    this.delay = 10;
+    this.filter = 'all'; 
   }
 
   ngOnInit() {
@@ -61,5 +63,19 @@ export class DashboardComponent implements OnInit {
       this.messages.push(newMsg);
       this.messages.sort((a,b) => b.invite_time - a.invite_time);
     }
+  }
+
+  getUnreadCnt(){
+    return this.messages.filter(msg => {
+      return msg.status !== 'read' 
+    }).length
+  }
+
+  showAll(){
+    this.filter = 'all';
+  }
+
+  showNew(){
+    this.filter = 'new';
   }
 }

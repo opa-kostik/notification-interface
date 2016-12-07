@@ -13,7 +13,6 @@ export class MessagesService {
   public getMessages(url){
     return this.http.get(url)
             .map(res => res.json())
-            //.catch((error:any) => Rx.throw(error.json().error || 'Server error'));
   }
 
 }
