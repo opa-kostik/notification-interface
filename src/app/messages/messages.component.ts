@@ -18,7 +18,8 @@ export class MessagesComponent implements OnInit {
   }
   
   getMsgText(msg){
-    return msg.invite.replace('\\n', ' ')
+    let text = msg.invite;
+    return text.replace('\\n', ' ')
   }
 
   doHide(msg){
@@ -29,10 +30,10 @@ export class MessagesComponent implements OnInit {
   }
 
   isRead(msg){
-    return msg.status === 'read';
+    return msg.isRead();
   }
 
   setRead(msg){
-    msg.status = 'read';
+    msg.setRead();
   }
 }

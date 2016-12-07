@@ -58,16 +58,16 @@ export class DashboardComponent implements OnInit {
     //check each message: if it is new or updates existing one
     let index = this.messages.findIndex(item => item.invite_id === newMsg.invite_id);
     if (index > -1){
-      this.messages[index] = newMsg;
+      this.messages[index] = new Message(newMsg);
     }else{
-      this.messages.push(newMsg);
+      this.messages.push(new Message(newMsg));
       this.messages.sort((a,b) => b.invite_time - a.invite_time);
     }
   }
 
   getUnreadCnt(){
     return this.messages.filter(msg => {
-      return msg.status !== 'read' 
+      return !msg.isRead() 
     }).length
   }
 
