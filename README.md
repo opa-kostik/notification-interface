@@ -43,3 +43,13 @@ Here is a screenshot of the app:
     
     * ALL - display all messages,
     * NEW - display messages with status other than 'read'. 
+
+3. New(unread) messages styled with a bold font.
+
+4. Particular notification may be opened by double-click on the corresponding item. 
+    A pop-up window with following action buttons will appear:
+
+    * Close   - closes the pop-up and marks the message as read,
+    * Dismiss - just closes the pop-up. 
+
+![popup](./src/assets/popup.PNG)
